@@ -8,9 +8,15 @@ class TriCount {
 
     let triangles = 0;
     for (let shortest = minLength; shortest <= maxLength; shortest++) {
+      const numberOfMediums = 1 + maxLength - shortest;
+      const numberOfMediumsThatResultInSumBelowMaxLength = Math.max(0, 1 + maxLength - 2 * shortest);
+      const numberOfMediumsThatResultInSumAboveMaxLength = numberOfMediums - numberOfMediumsThatResultInSumBelowMaxLength;
+
+      triangles += shortest * numberOfMediumsThatResultInSumBelowMaxLength;
+
       for (let medium = shortest; medium <= maxLength; medium++) {
         if (shortest + medium - 1 < maxLength) {
-          triangles += shortest;
+          //triangles += shortest;
         } else {
           triangles += 1 + maxLength - medium;
         }
