@@ -14,11 +14,15 @@ class TriCount {
 
       triangles += shortest * numberOfMediumsThatResultInSumBelowMaxLength;
 
+      for (let i = 0; i < numberOfMediumsThatResultInSumAboveMaxLength; i++) {
+          triangles += 1 + i;
+      }
+
       for (let medium = shortest; medium <= maxLength; medium++) {
         if (shortest + medium - 1 < maxLength) {
           //triangles += shortest;
         } else {
-          triangles += 1 + maxLength - medium;
+          //triangles += 1 + maxLength - medium;
         }
 
         if (triangles > 1000000000) {
