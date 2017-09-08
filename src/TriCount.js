@@ -9,14 +9,11 @@ class TriCount {
     let triangles = 0;
     for (let a = minLength; a <= maxLength; a++) {
       for (let b = a; b <= maxLength; b++) {
-        for (let c = b; c <= maxLength; c++) {
-          if (c < a + b) {
-            triangles += 1;
+        const maxLengthOfLargestSide = Math.min(a + b - 1, maxLength);
+        triangles += maxLengthOfLargestSide - b + 1;
 
-            if (triangles > 1000000000) {
-              return -1;
-            }
-          }
+        if (triangles > 1000000000) {
+          return -1;
         }
       }
     }
