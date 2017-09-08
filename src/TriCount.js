@@ -18,16 +18,8 @@ class TriCount {
           triangles += 1 + i;
       }
 
-      for (let medium = shortest; medium <= maxLength; medium++) {
-        if (shortest + medium - 1 < maxLength) {
-          //triangles += shortest;
-        } else {
-          //triangles += 1 + maxLength - medium;
-        }
-
-        if (triangles > 1000000000) {
-          return -1;
-        }
+      if (triangles > 1000000000) {
+        return -1;
       }
     }
 
