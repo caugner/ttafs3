@@ -9,11 +9,18 @@ class TriCount {
     let triangles = 0;
     for (let shortest = minLength; shortest <= maxLength; shortest++) {
       const numberOfMediums = 1 + maxLength - shortest;
-      const numberOfMediumsThatResultInSumBelowMaxLength = Math.max(0, 1 + maxLength - 2 * shortest);
-      const numberOfMediumsThatResultInSumAboveMaxLength = numberOfMediums - numberOfMediumsThatResultInSumBelowMaxLength;
+      const numberOfMediumsThatResultInSumBelowMaxLength = Math.max(
+        0,
+        1 + maxLength - 2 * shortest
+      );
+      const numberOfMediumsThatResultInSumAboveMaxLength =
+        numberOfMediums - numberOfMediumsThatResultInSumBelowMaxLength;
 
       triangles += shortest * numberOfMediumsThatResultInSumBelowMaxLength;
-      triangles += (1 + numberOfMediumsThatResultInSumAboveMaxLength) * (numberOfMediumsThatResultInSumAboveMaxLength) / 2;
+      triangles +=
+        (1 + numberOfMediumsThatResultInSumAboveMaxLength) *
+        numberOfMediumsThatResultInSumAboveMaxLength /
+        2;
 
       if (triangles > 1000000000) {
         return -1;
