@@ -15,9 +15,7 @@ class TriCount {
       triangles += shortest * numberOfMediumsThatResultInSumBelowMaxLength;
 
       triangles += numberOfMediumsThatResultInSumAboveMaxLength;
-      for (let i = 0; i < numberOfMediumsThatResultInSumAboveMaxLength; i++) {
-          triangles += i;
-      }
+      triangles += (numberOfMediumsThatResultInSumAboveMaxLength) * (numberOfMediumsThatResultInSumAboveMaxLength - 1) / 2;
 
       if (triangles > 1000000000) {
         return -1;
