@@ -10,7 +10,7 @@ class TriCount {
     for (let shortest = minLength; shortest <= maxLength; shortest++) {
       for (let medium = shortest; medium <= maxLength; medium++) {
         if (shortest + medium - 1 < maxLength) {
-          triangles += 1 + (shortest + medium - 1) - medium;
+          triangles += shortest;
         } else {
           triangles += 1 + maxLength - medium;
         }
