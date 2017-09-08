@@ -1,0 +1,12 @@
+{
+  "name": "test-techniques-sujet-3",
+  "version": "1.0.0",
+  "author": "Claas Augner <github@caugner.de>",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha tests/*.spec.js"
+  }
+}
