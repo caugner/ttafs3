@@ -13,9 +13,7 @@ class TriCount {
       const numberOfMediumsThatResultInSumAboveMaxLength = numberOfMediums - numberOfMediumsThatResultInSumBelowMaxLength;
 
       triangles += shortest * numberOfMediumsThatResultInSumBelowMaxLength;
-
-      triangles += numberOfMediumsThatResultInSumAboveMaxLength;
-      triangles += (numberOfMediumsThatResultInSumAboveMaxLength) * (numberOfMediumsThatResultInSumAboveMaxLength - 1) / 2;
+      triangles += (1 + numberOfMediumsThatResultInSumAboveMaxLength) * (numberOfMediumsThatResultInSumAboveMaxLength) / 2;
 
       if (triangles > 1000000000) {
         return -1;
